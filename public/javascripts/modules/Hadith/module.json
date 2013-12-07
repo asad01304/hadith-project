@@ -1,0 +1,32 @@
+{
+    "models"  : [
+        "Book.js",
+        "collections/Book.js",
+        "Chapter.js",
+        "collections/Chapter.js",
+        "Hadith.js",
+        "collections/Hadith.js"
+    ],
+    "views"   : [
+        "abstract/Default.js",
+        "Book.js",
+        "BookList.js",
+        "Chapter.js",
+        "ChapterList.js",
+        "Haidth.js",
+        "HadithList.js"
+    ],
+    "routers"  : [
+        "Hadith.js"
+    ],
+    "templates" : [
+        "Book.html",
+        "BookList.html",
+        "Chapter.html",
+        "ChapterList.html",
+        "Hadith.html",
+        "HadithList.html"
+
+    ]
+
+}

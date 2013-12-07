@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+#left-section{
+    width : 125px;
+}
+
+
+#content-area{
+    padding: 0px 10px;
+}
+
+
+.hadith {
+    width: 650px;
+    border: 1px #000000 dashed;
+    margin: 15px 0px;
+    padding: 5px;
+    background-color: oldlace;
+}
+
+.narrator{
+    background-color: peachpuff;
+}
+
+.reference{
+    background-color: peachpuff;
+}
+
+.chapter{
+    margin: 2px 0px;
+    padding: 2px;
+    border: 1px #000000 dashed;
+}

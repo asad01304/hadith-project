@@ -1,0 +1,19 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+      "generate" : "node deploy.js",
+      "start" : "node app.js"
+  },
+  "dependencies": {
+    "express": "3.2.6",
+    "ejs": "*",
+    "ejs-locals" : "*",
+    "mysql":"*",
+    "fs" : "*",
+    "uglify-js" : "*",
+    "underscore" : "*"
+
+  }
+}
