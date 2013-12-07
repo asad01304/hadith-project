@@ -39,3 +39,14 @@ a {
     padding: 2px;
     border: 1px #000000 dashed;
 }
+
+.chapter:hover{
+    margin: 2px 0px;
+    padding: 2px;
+    border: 1px #000000 dashed;
+    background-color: peachpuff;
+}
+
+.selected {
+    background-color: peachpuff;
+}

@@ -85,5 +85,8 @@ function getTemplates(files, container, moduleRoot){
 
 function prepareTemplate (html){
 
-    return html.replace(/\s{2,}/g,' ').replace(/(\r)|(\n)|(\r\n)/g,'');
+    var ESCAPE_STRING   = /\s{2,}/g ,
+        ESCAPE_CARRIAGE = /(\r)|(\n)|(\r\n)/g ;
+
+    return html.replace(ESCAPE_STRING,' ').replace(ESCAPE_CARRIAGE,'');
 }

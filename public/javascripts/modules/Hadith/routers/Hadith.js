@@ -2,7 +2,8 @@ var HadithRouter = Backbone.Router.extend({
 
     routes: {
         "":                             "dashboard",
-        "chapter/:bookId/:chapterId":   "chapter"
+        "chapter/:bookId/:chapterId":   "chapter",
+        "hadith/:hadithId"          :   "hadith"
     },
     initialize : function(){
         this.books    = new BookCollection();
@@ -31,6 +32,7 @@ var HadithRouter = Backbone.Router.extend({
         new ChapterListView({
             el : "#left-section",
             bookId : bookId,
+            chapterId :chapterId,
             collection: this.getChapters(bookId)
         });
 
@@ -40,6 +42,11 @@ var HadithRouter = Backbone.Router.extend({
             chapterId : chapterId,
             collection: this.getHadiths(bookId, chapterId)
         })
+    },
+
+    hadith : function(hadithId){
+
+
     },
 
     getChapters : function(bookId){

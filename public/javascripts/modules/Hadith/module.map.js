@@ -80,7 +80,9 @@ var BookListView = DefaultListView.extend({
 
     template : Templates.BookList,
 
-    initialize : function(){
+    initialize : function(opt){
+
+        this.bookId = opt.bookId;
         this.isLoaded() ? this.render(): this.loadCollection();
     },
     getFetchUrl : function(){
@@ -99,6 +101,10 @@ var BookListView = DefaultListView.extend({
 
         var bookView = new BookView({model:model});
         this.$el.append(bookView.$el);
+
+        if(model.id == this.bookId){
+            bookView.$el.addClass('selected');
+        }
     }
 });
 
@@ -137,6 +143,7 @@ var ChapterListView = DefaultListView.extend({
     initialize : function(opt){
 
         this.bookId = opt.bookId;
+        this.chapterId = opt.chapterId;
 
         this.isLoaded() ? this.render(): this.loadCollection();
     },
@@ -155,6 +162,10 @@ var ChapterListView = DefaultListView.extend({
     renderItem : function(model){
         var item = new ChapterView({model:model});
         this.$el.append(item.$el);
+
+        if(model.id == this.chapterId){
+            item.$el.addClass('selected');
+        }
     }
 });
 
@@ -215,7 +226,8 @@ var HadithRouter = Backbone.Router.extend({
 
     routes: {
         "":                             "dashboard",
-        "chapter/:bookId/:chapterId":   "chapter"
+        "chapter/:bookId/:chapterId":   "chapter",
+        "hadith/:hadithId"          :   "hadith"
     },
     initialize : function(){
         this.books    = new BookCollection();
@@ -244,6 +256,7 @@ var HadithRouter = Backbone.Router.extend({
         new ChapterListView({
             el : "#left-section",
             bookId : bookId,
+            chapterId :chapterId,
             collection: this.getChapters(bookId)
         });
 
@@ -253,6 +266,11 @@ var HadithRouter = Backbone.Router.extend({
             chapterId : chapterId,
             collection: this.getHadiths(bookId, chapterId)
         })
+    },
+
+    hadith : function(hadithId){
+
+
     },
 
     getChapters : function(bookId){

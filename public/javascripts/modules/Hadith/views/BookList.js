@@ -2,7 +2,9 @@ var BookListView = DefaultListView.extend({
 
     template : Templates.BookList,
 
-    initialize : function(){
+    initialize : function(opt){
+
+        this.bookId = opt.bookId;
         this.isLoaded() ? this.render(): this.loadCollection();
     },
     getFetchUrl : function(){
@@ -21,6 +23,10 @@ var BookListView = DefaultListView.extend({
 
         var bookView = new BookView({model:model});
         this.$el.append(bookView.$el);
+
+        if(model.id == this.bookId){
+            bookView.$el.addClass('selected');
+        }
     }
 });
 
