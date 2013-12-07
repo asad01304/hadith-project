@@ -26,9 +26,7 @@ _.each(modules, function(module){
         var files  = [];
         _.each(stacks, function(stack){
 
-            if(!package[stack]){
-                return true;
-            }
+            if(!package[stack]) return true;
 
             files = files.concat(getFilePath(
                 package[stack], moduleRoot + '/' + stack + '/'));
